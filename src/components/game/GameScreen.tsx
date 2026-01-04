@@ -144,11 +144,8 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
       <div className="flex-1 flex flex-col items-center justify-center gap-8">
         <div className="text-center animate-scale-in" key={currentConceptIndex}>
           <p className="text-lg text-muted-foreground mb-3 font-medium">What is...</p>
-          <h2 className="text-4xl md:text-6xl font-black text-primary drop-shadow-sm">
-            <span className="mr-3">{currentConcept.emoji}</span>
-            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-              {currentConcept.concept}
-            </span>
+          <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent drop-shadow-sm">
+            {currentConcept.concept}
           </h2>
         </div>
 
