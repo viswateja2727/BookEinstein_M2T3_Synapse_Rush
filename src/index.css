@@ -6,62 +6,68 @@
 
 @layer base {
   :root {
-    /* Book Einstein theme - clean, educational, child-friendly */
-    --background: 200 30% 98%;
-    --foreground: 220 40% 20%;
+    /* Light Blue child-friendly theme */
+    --background: 205 100% 96%;
+    --foreground: 215 50% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 40% 20%;
+    --card: 205 80% 98%;
+    --card-foreground: 215 50% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 20%;
+    --popover-foreground: 215 50% 25%;
 
-    /* Cyan/Teal primary (like "AI" text) */
-    --primary: 190 85% 45%;
+    /* Sky blue primary */
+    --primary: 205 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft blue secondary */
-    --secondary: 200 60% 55%;
+    /* Soft lavender secondary */
+    --secondary: 250 60% 70%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 200 20% 92%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 205 40% 90%;
+    --muted-foreground: 215 30% 45%;
 
-    /* Orange accent (like "Early", "Here" text) */
-    --accent: 25 95% 55%;
+    /* Coral accent for buttons */
+    --accent: 15 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     /* Green for success */
-    --success: 160 70% 42%;
+    --success: 145 70% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Orange for warnings/streaks */
-    --warning: 35 95% 55%;
-    --warning-foreground: 0 0% 100%;
+    /* Warm yellow for warnings/streaks */
+    --warning: 45 95% 55%;
+    --warning-foreground: 215 50% 20%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 25% 88%;
-    --input: 200 25% 88%;
-    --ring: 190 85% 45%;
+    --border: 205 50% 85%;
+    --input: 205 50% 85%;
+    --ring: 205 85% 55%;
 
     --radius: 1rem;
 
     /* Custom game variables */
-    --glow-primary: 0 0 25px hsl(190 85% 45% / 0.35);
-    --glow-accent: 0 0 25px hsl(25 95% 55% / 0.35);
-    --glow-success: 0 0 25px hsl(160 70% 42% / 0.35);
-    --glow-warning: 0 0 25px hsl(35 95% 55% / 0.35);
+    --glow-primary: 0 0 30px hsl(205 85% 55% / 0.4);
+    --glow-accent: 0 0 30px hsl(15 90% 60% / 0.4);
+    --glow-success: 0 0 30px hsl(145 70% 45% / 0.5);
+    --glow-warning: 0 0 25px hsl(45 95% 55% / 0.4);
+    
+    /* Answer card colors */
+    --card-option-1: 205 80% 92%;
+    --card-option-2: 250 60% 92%;
+    --card-option-3: 175 60% 90%;
+    --card-option-4: 320 60% 92%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 40% 20%;
-    --sidebar-primary: 190 85% 45%;
+    --sidebar-foreground: 215 50% 25%;
+    --sidebar-primary: 205 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 200 20% 95%;
-    --sidebar-accent-foreground: 220 40% 20%;
-    --sidebar-border: 200 25% 88%;
-    --sidebar-ring: 190 85% 45%;
+    --sidebar-accent: 205 40% 95%;
+    --sidebar-accent-foreground: 215 50% 25%;
+    --sidebar-border: 205 50% 85%;
+    --sidebar-ring: 205 85% 55%;
   }
 }
 
@@ -77,25 +83,35 @@
 
 @layer components {
   .game-card {
-    @apply relative overflow-hidden rounded-2xl border-2 border-transparent bg-card p-6 
+    @apply relative overflow-hidden rounded-2xl border-2 border-white/60 p-6 
            transition-all duration-300 ease-out cursor-pointer;
+    box-shadow: 0 4px 15px hsl(205 60% 70% / 0.25), inset 0 1px 0 white;
   }
 
   .game-card:hover {
-    @apply border-primary scale-105;
-    box-shadow: var(--glow-primary);
+    @apply border-primary/50 scale-105;
+    box-shadow: 0 8px 25px hsl(205 60% 60% / 0.35), var(--glow-primary);
+    transform: translateY(-4px) scale(1.02);
   }
 
   .game-card.correct {
-    @apply border-success scale-110;
-    box-shadow: var(--glow-success);
+    @apply border-success scale-105;
+    background: linear-gradient(135deg, hsl(145 70% 92%), hsl(145 60% 85%));
+    box-shadow: 0 8px 30px hsl(145 70% 45% / 0.4), var(--glow-success);
     animation: correctPop 0.5s ease-out;
   }
 
   .game-card.wrong {
     @apply border-destructive;
+    background: linear-gradient(135deg, hsl(0 70% 95%), hsl(0 60% 90%));
+    box-shadow: 0 4px 20px hsl(0 70% 50% / 0.3);
     animation: wrongShake 0.5s ease-out;
   }
+
+  .game-card-1 { background: linear-gradient(135deg, hsl(var(--card-option-1)), hsl(205 70% 95%)); }
+  .game-card-2 { background: linear-gradient(135deg, hsl(var(--card-option-2)), hsl(250 50% 95%)); }
+  .game-card-3 { background: linear-gradient(135deg, hsl(var(--card-option-3)), hsl(175 50% 93%)); }
+  .game-card-4 { background: linear-gradient(135deg, hsl(var(--card-option-4)), hsl(320 50% 95%)); }
 
   .neon-text {
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
