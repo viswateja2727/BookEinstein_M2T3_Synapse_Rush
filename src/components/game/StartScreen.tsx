@@ -9,13 +9,14 @@ interface StartScreenProps {
 export const StartScreen = ({ onStart }: StartScreenProps) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 gap-8">
-      {/* Title */}
+      {/* Title - matching Book Einstein style */}
       <div className="text-center animate-slide-up">
-        <h1 className="text-5xl md:text-7xl font-black gradient-text mb-2">
-          SYNAPSE RUSH
+        <h1 className="text-5xl md:text-7xl font-black mb-2">
+          <span className="text-foreground">SYNAPSE </span>
+          <span className="text-primary">RUSH</span>
         </h1>
         <p className="text-xl text-muted-foreground font-semibold">
-          Learn AI concepts at lightning speed! ⚡
+          Learn <span className="text-primary font-bold">AI</span> concepts at lightning speed! ⚡
         </p>
       </div>
 
@@ -46,13 +47,13 @@ export const StartScreen = ({ onStart }: StartScreenProps) => {
         </div>
       </div>
 
-      {/* Start Button */}
+      {/* Start Button - Orange like Book Einstein CTA */}
       <Button
         onClick={onStart}
         size="lg"
-        className="animate-scale-in text-xl font-bold px-12 py-8 rounded-2xl 
-                   bg-gradient-to-r from-primary to-accent hover:scale-110 
-                   transition-transform duration-300 text-primary-foreground"
+        className="animate-scale-in text-xl font-bold px-12 py-8 rounded-full 
+                   bg-accent hover:bg-accent/90 hover:scale-110 
+                   transition-all duration-300 text-accent-foreground shadow-lg"
         style={{ animationDelay: '0.6s' }}
       >
         <Play className="w-8 h-8 mr-2" />

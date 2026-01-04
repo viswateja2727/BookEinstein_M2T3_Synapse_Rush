@@ -99,13 +99,13 @@ export const EndScreen = ({ score, matched, onRestart }: EndScreenProps) => {
         </div>
       </div>
 
-      {/* Restart Button */}
+      {/* Restart Button - Orange like Book Einstein CTA */}
       <Button
         onClick={onRestart}
         size="lg"
-        className="animate-scale-in text-xl font-bold px-12 py-8 rounded-2xl 
-                   bg-gradient-to-r from-primary to-accent hover:scale-110 
-                   transition-transform duration-300 text-primary-foreground"
+        className="animate-scale-in text-xl font-bold px-12 py-8 rounded-full 
+                   bg-accent hover:bg-accent/90 hover:scale-110 
+                   transition-all duration-300 text-accent-foreground shadow-lg"
         style={{ animationDelay: '1s' }}
       >
         <RotateCcw className="w-8 h-8 mr-2" />
