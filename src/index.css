@@ -6,62 +6,62 @@
 
 @layer base {
   :root {
-    /* Playful light theme - child-friendly and bright */
-    --background: 210 40% 98%;
-    --foreground: 240 20% 20%;
+    /* Book Einstein theme - clean, educational, child-friendly */
+    --background: 200 30% 98%;
+    --foreground: 220 40% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 20% 20%;
+    --card-foreground: 220 40% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 20% 20%;
+    --popover-foreground: 220 40% 20%;
 
-    /* Vibrant blue primary */
-    --primary: 220 90% 56%;
+    /* Cyan/Teal primary (like "AI" text) */
+    --primary: 190 85% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft purple secondary */
-    --secondary: 280 70% 65%;
+    /* Soft blue secondary */
+    --secondary: 200 60% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 90%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 200 20% 92%;
+    --muted-foreground: 220 15% 50%;
 
-    /* Magenta accent */
-    --accent: 330 85% 60%;
+    /* Orange accent (like "Early", "Here" text) */
+    --accent: 25 95% 55%;
     --accent-foreground: 0 0% 100%;
 
-    /* Lime green for success */
-    --success: 145 75% 45%;
+    /* Green for success */
+    --success: 160 70% 42%;
     --success-foreground: 0 0% 100%;
 
     /* Orange for warnings/streaks */
     --warning: 35 95% 55%;
     --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 80% 55%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 85%;
-    --input: 220 20% 85%;
-    --ring: 220 90% 56%;
+    --border: 200 25% 88%;
+    --input: 200 25% 88%;
+    --ring: 190 85% 45%;
 
     --radius: 1rem;
 
     /* Custom game variables */
-    --glow-primary: 0 0 25px hsl(220 90% 56% / 0.4);
-    --glow-accent: 0 0 25px hsl(330 85% 60% / 0.4);
-    --glow-success: 0 0 25px hsl(145 75% 45% / 0.4);
-    --glow-warning: 0 0 25px hsl(35 95% 55% / 0.4);
+    --glow-primary: 0 0 25px hsl(190 85% 45% / 0.35);
+    --glow-accent: 0 0 25px hsl(25 95% 55% / 0.35);
+    --glow-success: 0 0 25px hsl(160 70% 42% / 0.35);
+    --glow-warning: 0 0 25px hsl(35 95% 55% / 0.35);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 20% 20%;
-    --sidebar-primary: 220 90% 56%;
+    --sidebar-foreground: 220 40% 20%;
+    --sidebar-primary: 190 85% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 30% 95%;
-    --sidebar-accent-foreground: 240 20% 20%;
-    --sidebar-border: 220 20% 85%;
-    --sidebar-ring: 220 90% 56%;
+    --sidebar-accent: 200 20% 95%;
+    --sidebar-accent-foreground: 220 40% 20%;
+    --sidebar-border: 200 25% 88%;
+    --sidebar-ring: 190 85% 45%;
   }
 }
 
