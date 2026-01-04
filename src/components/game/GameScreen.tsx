@@ -143,14 +143,17 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
       {/* Current Concept */}
       <div className="flex-1 flex flex-col items-center justify-center gap-8">
         <div className="text-center animate-scale-in" key={currentConceptIndex}>
-          <p className="text-lg text-muted-foreground mb-2">What is...</p>
-          <h2 className="text-4xl md:text-6xl font-black gradient-text">
-            {currentConcept.emoji} {currentConcept.concept}
+          <p className="text-lg text-muted-foreground mb-3 font-medium">What is...</p>
+          <h2 className="text-4xl md:text-6xl font-black text-primary drop-shadow-sm">
+            <span className="mr-3">{currentConcept.emoji}</span>
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              {currentConcept.concept}
+            </span>
           </h2>
         </div>
 
         {/* Answer Options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-3xl">
           {options.map((option, index) => (
             <AnswerCard
               key={`${currentConceptIndex}-${option.id}`}
@@ -160,6 +163,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
               disabled={selectedAnswer !== null}
               isCorrect={selectedAnswer === option.id ? isCorrect : null}
               delay={index * 100}
+              cardIndex={index}
             />
           ))}
         </div>
