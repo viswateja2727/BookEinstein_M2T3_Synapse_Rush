@@ -25,12 +25,18 @@ export const EndScreen = ({ score, matched, onRestart }: EndScreenProps) => {
     return 0;
   };
 
+  const getAccuracyEmoji = () => {
+    if (accuracy > 60) return '😊';
+    if (accuracy >= 40) return '😐';
+    return '😢';
+  };
+
   const getMessage = () => {
     const stars = getStarCount();
-    if (stars === 3) return "🎉 AMAZING! You're an AI Master!";
-    if (stars === 2) return "🌟 Great job! You're learning fast!";
-    if (stars === 1) return "👍 Good start! Keep practicing!";
-    return "💪 Don't give up! Try again!";
+    if (stars === 3) return "AMAZING! You're an AI Master!";
+    if (stars === 2) return "Great job! You're learning fast!";
+    if (stars === 1) return "Good start! Keep practicing!";
+    return "Don't give up! Try again!";
   };
 
   useEffect(() => {
@@ -82,14 +88,17 @@ export const EndScreen = ({ score, matched, onRestart }: EndScreenProps) => {
         </div>
       </div>
 
-      {/* Accuracy Bar */}
+      {/* Accuracy Bar with Emoji */}
       <div 
         className="w-full max-w-md animate-slide-up"
         style={{ animationDelay: '0.8s' }}
       >
-        <div className="flex justify-between text-sm text-muted-foreground mb-2">
+        <div className="flex justify-between items-center text-sm text-muted-foreground mb-2">
           <span>Accuracy</span>
-          <span>{accuracy}%</span>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">{getAccuracyEmoji()}</span>
+            <span className="font-bold text-foreground">{accuracy}%</span>
+          </div>
         </div>
         <div className="h-4 rounded-full bg-muted overflow-hidden">
           <div
