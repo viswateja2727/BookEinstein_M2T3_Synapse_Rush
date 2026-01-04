@@ -28,11 +28,13 @@ export const SynapseRush = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Background decoration */}
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
+      {/* Background decoration - playful light bubbles */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/3 right-20 w-48 h-48 bg-gradient-to-br from-accent/20 to-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 left-1/4 w-56 h-56 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-gradient-to-br from-success/15 to-success/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
       </div>
 
       <SoundToggle />
