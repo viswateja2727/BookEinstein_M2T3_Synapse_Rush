@@ -1,12 +1,19 @@
 import { Star } from 'lucide-react';
 import { GAME_CONFIG } from './GameData';
 
-interface StarRatingProps {
-  score: number;
+interface StarThresholds {
+  oneStar: number;
+  twoStars: number;
+  threeStars: number;
 }
 
-export const StarRating = ({ score }: StarRatingProps) => {
-  const { starThresholds } = GAME_CONFIG;
+interface StarRatingProps {
+  score: number;
+  thresholds?: StarThresholds;
+}
+
+export const StarRating = ({ score, thresholds }: StarRatingProps) => {
+  const starThresholds = thresholds || GAME_CONFIG.starThresholds;
 
   const getStarCount = (): number => {
     if (score >= starThresholds.threeStars) return 3;
