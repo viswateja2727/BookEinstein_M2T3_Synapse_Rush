@@ -1,10 +1,11 @@
-import { RotateCcw, Trophy, Target, Sparkles } from 'lucide-react';
+import { RotateCcw, Trophy, Target, Sparkles, Lightbulb } from 'lucide-react';
 import { BrainMascot } from './BrainMascot';
 import { StarRating } from './StarRating';
 import { Confetti } from './Confetti';
 import { Button } from '@/components/ui/button';
 import { AI_CONCEPTS, GAME_CONFIG } from './GameData';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface EndScreenProps {
   score: number;
@@ -133,6 +134,16 @@ export const EndScreen = ({ score, matched, onRestart }: EndScreenProps) => {
           <>🏆 <strong>Perfect!</strong> You've mastered all AI concepts!</>
         )}
       </p>
+
+      {/* Link to Apply Game */}
+      <Link 
+        to="/apply"
+        className="animate-slide-up flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+        style={{ animationDelay: '1.4s' }}
+      >
+        <Lightbulb className="w-4 h-4" />
+        Ready to apply what you learned? Try Synapse Apply
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,7 @@
-import { Play, Zap, Brain, Clock, Star } from 'lucide-react';
+import { Play, Zap, Brain, Clock, Star, ArrowRight } from 'lucide-react';
 import { BrainMascot } from './BrainMascot';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface StartScreenProps {
   onStart: () => void;
@@ -69,6 +70,16 @@ export const StartScreen = ({ onStart }: StartScreenProps) => {
         <p>💡 <strong>Tip:</strong> Wrong answers cost 50 points and 3 seconds!</p>
         <p className="mt-1">🔥 Build streaks for multiplied points!</p>
       </div>
+
+      {/* Link to Apply Game */}
+      <Link 
+        to="/apply"
+        className="animate-slide-up text-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors"
+        style={{ animationDelay: '1s' }}
+      >
+        Already know the definitions? Try Synapse Apply
+        <ArrowRight className="w-4 h-4" />
+      </Link>
     </div>
   );
 };
