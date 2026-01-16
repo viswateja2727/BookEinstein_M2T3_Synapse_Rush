@@ -57,7 +57,7 @@ export const ApplyGameScreen = ({ onGameOver }: ApplyGameScreenProps) => {
       setScore(prev => Math.max(0, prev + APPLY_GAME_CONFIG.wrongPenalty));
     }
 
-    // Move to next question after delay
+    // Move to next question after 2 second delay
     setTimeout(() => {
       if (currentIndex + 1 >= gameScenarios.length) {
         const finalScore = isCorrect 
@@ -72,7 +72,7 @@ export const ApplyGameScreen = ({ onGameOver }: ApplyGameScreenProps) => {
         setShowHint(false);
         setHintUsed(false);
       }
-    }, 1500);
+    }, 2000);
   }, [showFeedback, currentScenario, hintUsed, currentIndex, gameScenarios.length, score, correctCount, onGameOver]);
 
   const handleShowHint = useCallback(() => {
