@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**URL**: [Synapse Rush](https://synapse-rush.vercel.app/)(click here to play)
 
 ## How can I edit this code?
 
