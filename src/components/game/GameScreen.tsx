@@ -159,6 +159,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
               onClick={() => handleAnswer(option)}
               disabled={selectedAnswer !== null}
               isCorrect={selectedAnswer === option.id ? isCorrect : null}
+              isTheCorrectAnswer={option.id === currentConcept.id}
               delay={index * 100}
               cardIndex={index}
             />
