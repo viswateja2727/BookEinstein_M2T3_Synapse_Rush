@@ -6,6 +6,7 @@ interface AnswerCardProps {
   onClick: () => void;
   disabled: boolean;
   isCorrect?: boolean | null;
+  isTheCorrectAnswer?: boolean; // New prop to highlight correct answer when wrong is selected
   delay?: number;
   cardIndex?: number;
 }
@@ -16,6 +17,7 @@ export const AnswerCard = ({
   onClick,
   disabled,
   isCorrect,
+  isTheCorrectAnswer = false,
   delay = 0,
   cardIndex = 0,
 }: AnswerCardProps) => {
@@ -31,6 +33,8 @@ export const AnswerCard = ({
   const getStateClass = () => {
     if (isCorrect === true) return 'correct';
     if (isCorrect === false && clicked) return 'wrong';
+    // Highlight correct answer when a wrong answer was selected
+    if (isTheCorrectAnswer && disabled && isCorrect === null) return 'correct';
     return '';
   };
 
