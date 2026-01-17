@@ -152,6 +152,8 @@ export const ApplyGameScreen = ({ onGameOver }: ApplyGameScreenProps) => {
           {shuffledOptions.map((option, index) => {
             const isSelected = selectedAnswer === option.id;
             const isCorrect = option.id === currentScenario.correctConceptId;
+            const wasWrongAnswer = selectedAnswer !== currentScenario.correctConceptId;
+            // Always highlight correct answer during feedback (even when wrong was selected)
             const showAsCorrect = showFeedback && isCorrect;
             const showAsWrong = showFeedback && isSelected && !isCorrect;
 
