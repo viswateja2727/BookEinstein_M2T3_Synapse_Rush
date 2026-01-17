@@ -72,7 +72,7 @@ export const ApplyGameScreen = ({ onGameOver }: ApplyGameScreenProps) => {
         setShowHint(false);
         setHintUsed(false);
       }
-    }, 4000);
+    }, 1500);
   }, [showFeedback, currentScenario, hintUsed, currentIndex, gameScenarios.length, score, correctCount, onGameOver]);
 
   const handleShowHint = useCallback(() => {
