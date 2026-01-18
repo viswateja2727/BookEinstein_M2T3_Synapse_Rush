@@ -109,7 +109,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
       soundManager.playWrong();
     }
 
-    // Move to next concept
+    // Move to next concept after 3 second delay to match Apply game
     setTimeout(() => {
       if (currentConceptIndex + 1 >= concepts.length) {
         onGameOver(score + (correct ? GAME_CONFIG.baseScore : 0), matched + (correct ? 1 : 0));
@@ -117,7 +117,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
       } else {
         setCurrentConceptIndex(prev => prev + 1);
       }
-    }, 800);
+    }, 3000);
   }, [selectedAnswer, concepts, currentConceptIndex, streak, timeLeft, score, matched, onGameOver]);
 
   if (concepts.length === 0) return null;
